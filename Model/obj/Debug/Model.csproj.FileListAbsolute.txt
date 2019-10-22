@@ -1,0 +1,6 @@
+C:\AluraWorkspace\Videolocadora\Model\bin\Debug\Model.dll.config
+C:\AluraWorkspace\Videolocadora\Model\bin\Debug\Model.dll
+C:\AluraWorkspace\Videolocadora\Model\bin\Debug\Model.pdb
+C:\AluraWorkspace\Videolocadora\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\AluraWorkspace\Videolocadora\Model\obj\Debug\Model.dll
+C:\AluraWorkspace\Videolocadora\Model\obj\Debug\Model.pdb
