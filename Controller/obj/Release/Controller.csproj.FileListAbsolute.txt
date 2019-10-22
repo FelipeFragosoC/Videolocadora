@@ -1,0 +1,1 @@
+C:\AluraWorkspace\Videolocadora\Controller\obj\Release\Controller.csprojAssemblyReference.cache
