@@ -31,7 +31,7 @@ namespace Controller
                     cmd.Connection = conn;
                     cmd.CommandText = query;
 
-                    //Cria um adapter que usará a instrução SQL para acessar a tabela de Filme
+                    //Cria um adapter que usará a instrução SQL para acessar a tabela de cliente
                     using (MySqlDataAdapter da = new MySqlDataAdapter())
                     {
                         da.SelectCommand = cmd;
@@ -54,11 +54,11 @@ namespace Controller
 
                         foreach(Cliente cliente in lstRetorno)
                         {
-                            // Recuperando o genero cinematografico de cada filme da lista
+                            // Recuperando o telefone de cada cliente da lista
                             TelefoneController telefoneController = new TelefoneController();
                             cliente.Telefone = telefoneController.BuscarPorId(cliente.IdTelefone);
 
-                            // Recuperando a classificacao indicativa de cada filme da lista
+                            // Recuperando o endereço de cada cliente da lista
                             EnderecoController enderecoController = new EnderecoController();
                             cliente.Endereco = enderecoController.BuscarPorId(cliente.IdEndereco);
                         }
@@ -108,11 +108,11 @@ namespace Controller
                         retorno.IdEndereco = (int)reader["endereco_id"];
                     }
 
-                    // Recuperando o genero cinematografico de cada filme da lista
+                    // Recuperando o telefone de cada cliente da lista
                     TelefoneController telefoneController = new TelefoneController();
                     retorno.Telefone = telefoneController.BuscarPorId(retorno.IdTelefone);
 
-                    // Recuperando a classificacao indicativa de cada filme da lista
+                    // Recuperando o endereço de cada cliente da lista
                     EnderecoController enderecoController = new EnderecoController();
                     retorno.Endereco = enderecoController.BuscarPorId(retorno.IdEndereco);
 
