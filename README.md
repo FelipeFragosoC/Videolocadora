@@ -14,7 +14,9 @@ Projeto desenvolvido em C# para a disciplina de Programação Orientada a Objeto
 Criar o banco de dados no mysql executando os scripts localizados no diretorio "Videolocadora\Model\BaseDeDados" na seguinte ordem:
 
 1.Create-DB-Tables.sql
+
 2.Insert-TableDominio-ClassificacaoIndicativa.sql
+
 3.Insert-TableDominio-GeneroCinematografico.sql
 
 OBS: Nesse diretório também contem o MER, disponibilizado pelo arquivo videolocadora.mwb.
