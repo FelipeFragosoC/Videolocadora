@@ -30,7 +30,7 @@ namespace Controller
                     cmd.Connection = conn;
                     cmd.CommandText = query;
 
-                    //Cria um adapter que usará a instrução SQL para acessar a tabela de endereço
+                    //Cria um adapter que usará a instrução SQL para acessar a tabela de Filme
                     using (MySqlDataAdapter da = new MySqlDataAdapter())
                     {
                         da.SelectCommand = cmd;

@@ -14,8 +14,8 @@ namespace View
         {
             /** GERENCIAR FILMES **/
 
-            //ListarFilmes();
-            //CadastrarFilme(new Filme());//Parametro: Filme(model)
+            ListarFilmes();
+            //InserirFilme(new Filme());//Parametro: Filme(model)
             //BuscarFilme(1); //Parametro: id
             //AtualizarFilme(new Filme());//Parametro: Filme(model)
             //ExcluirFilme(2); //Parametro: id
@@ -52,16 +52,6 @@ namespace View
             //ListarEnderecos();
             //BuscarEndereco(1); //Parametro: idCliente
             //AtualizarEndereco(new Endereco(), 1); //Parametros: Endereco(model) e idCliente
-
-            /** GERENCIAR DEPENDENTES **/
-
-            //ListarDependentes();
-            //BuscarDependente(2); //Parametro: idCliente
-            //CadastrarDependente(new Dependente()); //Parametro: Dependente(model)
-            //AtualizarDependente(new Dependente()); //Parametro: Dependente(model)
-            //ExcluirDependente(2); //Parametro idCliente
-
-            Console.Read();
         }
 
         /** ~~~~~~~~~~ METODOS FILMES ~~~~~~~~~~ **/
@@ -88,7 +78,7 @@ namespace View
         /// <summary>
         /// Método da VIEW para chamada da controller de cadastrar um filme
         /// </summary>
-        private static void CadastrarFilme(Filme registro)
+        private static void InserirFilme(Filme registro)
         {
             //Populando registro de filme (ESSE REGISTRO PODE SER POPULADO PELO USUÁRIO EM TELA)
             registro.Titulo = "Titanic";
@@ -486,87 +476,6 @@ namespace View
             
             //Atualiza o endereco do cliente
             enderecoController.Atualizar(endereco, idCliente);
-        }
-
-        /** ~~~~~~~~~~ METODOS DEPENDENTES ~~~~~~~~~~ **/
-
-        /// <summary>
-        /// Método da VIEW para chamada da controller de listagem de dependentes
-        /// </summary>
-        private static void ListarDependentes()
-        {
-            //Instancia a controller de dependente
-            DependenteController controller = new DependenteController();
-
-            //Recupera a lista de dependentes
-            var lstDependente = controller.Listar();
-
-            //Laço de repetição para navegar na lista de dependentes
-            foreach (var item in lstDependente)
-            {
-                //Imprime em tela os dados do dependente
-                Console.WriteLine($"ID: {item.Id} || Nome: {item.Nome} || Titular:{item.Cliente.Nome} || CPF do Titular: {item.Cliente.Cpf}");
-            }
-        }
-
-        /// <summary>
-        /// Método da VIEW para chamada da controller de cadastrar um dependente
-        /// </summary>
-        private static void CadastrarDependente(Dependente registro)
-        {
-            //Populando registro de dependente (ESSE REGISTRO PODE SER POPULADO PELO USUÁRIO EM TELA)
-            registro.Nome = "Lorena Porto";
-            registro.IdCliente = 1;
-
-            //Instancia a controller de filme
-            DependenteController controller = new DependenteController();
-
-            //Insere o registro de filme na base de dados
-            controller.Inserir(registro);
-        }
-
-        /// <summary>
-        /// Método da VIEW para chamada da controller de pesquisar um dependente
-        /// </summary>
-        private static void BuscarDependente(int id)
-        {
-            //Instancia a controller de dependentes
-            DependenteController controller = new DependenteController();
-
-            //Recupera o dependente
-            var dependente = controller.Buscar(id);
-
-            //Imprime em tela os dados do dependente
-            Console.WriteLine($"ID: {dependente.Id} || Nome: {dependente.Nome} || Titular:{dependente.Cliente.Nome} || CPF: {dependente.Cliente.Cpf}");
-        }
-
-        /// <summary>
-        /// Método da VIEW para chamada da controller de atualizar dados de um dependente
-        /// </summary>
-        private static void AtualizarDependente(Dependente registro)
-        {
-            //Populando registro de dependente (ESSE REGISTRO PODE SER POPULADO PELO USUÁRIO EM TELA)
-            registro.Id = 2;
-            registro.Nome = "Jaqueline Bezerra";
-            registro.IdCliente = 1;
-
-            //Instancia a controller de dependente
-            DependenteController controller = new DependenteController();
-
-            //Atualiza o registro de dependente na base de dados
-            controller.Atualizar(registro);
-        }
-
-        /// <summary>
-        /// Método da VIEW para chamada da controller de excluir um dependente
-        /// </summary>
-        private static void ExcluirDependente(int id)
-        {
-            //Instancia a controller de dependente
-            DependenteController controller = new DependenteController();
-
-            //Exclui o registro de dependente na base de dados
-            controller.Excluir(id);
         }
     }
 }

@@ -1,0 +1,284 @@
+@model VideoLocadora.Models.Filme
+
+@{
+    ViewData["Title"] = "Listar";
+    ViewData["Title"] = "Inserir";
+    ViewData["Title"] = "Atualizar";
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/css/style.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <title>Video Locadora</title>
+    <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/C13178AA-D1FA-4F41-8C01-B9A8C332CF75/main.js" charset="UTF-8"></script>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html">Locadora</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Video Locadora
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html"><i class="fa fa-fw fa-rocket"></i>Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-0-1" aria-controls="submenu-0-1"><i class="fa fa-fw fas fa-user"></i>Clientes</a>
+                                <div id="submenu-0-1" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="cadastro_cliente.html">Cadastro</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-0-2" aria-controls="submenu-0-2"><i class="fa fa-fw fas fa-file-video"></i>Filmes</a>
+                                <div id="submenu-0-2" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="cadastro_filme.html">Cadastro</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-0-3" aria-controls="submenu-0-3"><i class="fa fa-fw fas fa-warehouse"></i>Locações</a>
+                                <div id="submenu-0-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="controle_locacao.html">Controle</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper ">
+            <div class="dashboard-ecommerce ">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row ">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <div class="page-header ">
+                                <h2 class="pageheader-title ">Filmes</h2>
+                                <p class="pageheader-text "></p>
+                                <div class="page-breadcrumb ">
+                                    <nav aria-label="breadcrumb ">
+                                        <ol class="breadcrumb ">
+                                            <li class="breadcrumb-item ">Locadora</li>
+                                            <li class="breadcrumb-item" aria-current="page ">Filmes</li>
+                                            <li class="breadcrumb-item active " aria-current="page ">Cadastro</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="ecommerce-widget ">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-header tab-regular">
+                                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="card-tab-1" data-toggle="tab" href="#card-1" role="tab" aria-controls="card-1" aria-selected="true">Filmes</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="card-tab-2" data-toggle="tab" href="#card-2" role="tab" aria-controls="card-2" aria-selected="false">Novo Filme</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="card-1" role="tabpanel" aria-labelledby="card-tab-1">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped table-bordered first">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Titulo</th>
+                                                                        <th>Lançamento</th>
+                                                                        <th>Sinopse</th>
+                                                                        <th>Gênero</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>E o vento levou</td>
+                                                                        <td>01/01/1930</td>
+                                                                        <td>Scarlett O'Hara é uma jovem mimada que consegue tudo o que quer. No entanto, algo falta em sua vida: o amor de Ashley Wilkes, um nobre sulista que deve se casar com a sua prima Melanie.</td>
+                                                                        <td>Drama</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Dumbo</td>
+                                                                        <td>01/05/1948</td>
+                                                                        <td>Dumbo é um bebê elefante de um circo que nasceu com orelhas enormes. Após ser ridicularizado por seu grupo de amigos, ele se transforma na principal atração de seu circo quando descobre
+                                                                            que, usando suas orelhas, é capaz de fazer o que nenhum outro elefante consegue: voar.</td>
+                                                                        <td>Animação</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Breakfast at Tiffany's</td>
+                                                                        <td>01/08/1968</td>
+                                                                        <td>Holly Golightly é uma garota de programa que está decidida a casar-se com um milionário. Perdida entre a inocência, ambição e futilidade, ela toma seus cafés da manhã em frente à
+                                                                            famosa joalheria Tiffany, na intenção de fugir dos problemas.</td>
+                                                                        <td>Drama</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="card-2" role="tabpanel" aria-labelledby="card-tab-2">
+                                                <div class="card">
+                                                    <h5 class="card-header">Novo Filme</h5>
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                                <div class="form-group">
+                                                                    <label for="inputText1" class="col-form-label">Título</label>
+                                                                    <input id="inputText1" type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                                <div class="form-group">
+                                                                    <label for="inputText5" class="col-form-label">Lançamento</label>
+                                                                    <input id="inputText5" type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                                <div class="form-group">
+                                                                    <label for="inputText2" class="col-form-label">Sinopse</label>
+                                                                    <input id="inputText2" type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                                <div class="form-group">
+                                                                    <label for="inputText3" class="col-form-label">Gênero</label>
+                                                                    <input id="inputText3" type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer p-0 text-right">
+                                                            <div class="card-footer-item card-footer-item-bordered">
+                                                                <a href="#" class="btn btn-rounded btn-primary">Salvar</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                            Sistema de Locação
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js "></script>
+    <!-- bootstap bundle js -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js "></script>
+    <!-- slimscroll js -->
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js "></script>
+    <!-- main js -->
+    <script src="assets/libs/js/main-js.js "></script>
+    <!-- chart chartist js -->
+    <script src="assets/vendor/charts/chartist-bundle/chartist.min.js "></script>
+    <!-- sparkline js -->
+    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js "></script>
+    <!-- morris js -->
+    <script src="assets/vendor/charts/morris-bundle/raphael.min.js "></script>
+    <script src="assets/vendor/charts/morris-bundle/morris.js "></script>
+    <!-- chart c3 js -->
+    <script src="assets/vendor/charts/c3charts/c3.min.js "></script>
+    <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js "></script>
+    <script src="assets/vendor/charts/c3charts/C3chartjs.js "></script>
+    <script src="assets/libs/js/dashboard-ecommerce.js "></script>
+</body>
+
+</html>

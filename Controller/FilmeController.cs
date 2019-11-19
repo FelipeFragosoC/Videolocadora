@@ -1,9 +1,11 @@
-﻿using Model;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using SalesWebMvc.Models;
 
 namespace Controller
 {
@@ -52,7 +54,7 @@ namespace Controller
                             IdClassificacaoIndicativa = x.Field<int>("classificacao_indicativa_id")
                         }).ToList();
 
-                        foreach(Filme filme in lstRetorno)
+                        foreach (Filme filme in lstRetorno)
                         {
                             // Recuperando o genero cinematografico de cada filme da lista
                             GeneroCinematograficoController generoController = new GeneroCinematograficoController();
@@ -137,7 +139,7 @@ namespace Controller
                 {
                     //Monta a consulta no banco de dados
                     string query = $"INSERT INTO filme(titulo, lancamento, sinopse, genero_cinematografico_id, classificacao_indicativa_id) VALUES ('{registro.Titulo}', {registro.Lancamento}, '{registro.Sinopse}', {registro.IdGeneroCinematografico}, {registro.IdClassificacaoIndicativa})";
-               
+
                     //Passa informação de conexão e consulta para o comando
                     cmd.Connection = conn;
                     cmd.CommandText = query;

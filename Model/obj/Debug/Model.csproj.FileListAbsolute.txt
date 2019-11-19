@@ -4,9 +4,3 @@ C:\AluraWorkspace\Videolocadora\Model\bin\Debug\Model.pdb
 C:\AluraWorkspace\Videolocadora\Model\obj\Debug\Model.csprojAssemblyReference.cache
 C:\AluraWorkspace\Videolocadora\Model\obj\Debug\Model.dll
 C:\AluraWorkspace\Videolocadora\Model\obj\Debug\Model.pdb
-C:\Users\Felipe\Documents\UNIPLAN\Videolocadora\FelipeFragosoC\Videolocadora\Model\bin\Debug\Model.dll.config
-C:\Users\Felipe\Documents\UNIPLAN\Videolocadora\FelipeFragosoC\Videolocadora\Model\bin\Debug\Model.dll
-C:\Users\Felipe\Documents\UNIPLAN\Videolocadora\FelipeFragosoC\Videolocadora\Model\bin\Debug\Model.pdb
-C:\Users\Felipe\Documents\UNIPLAN\Videolocadora\FelipeFragosoC\Videolocadora\Model\obj\Debug\Model.csprojAssemblyReference.cache
-C:\Users\Felipe\Documents\UNIPLAN\Videolocadora\FelipeFragosoC\Videolocadora\Model\obj\Debug\Model.dll
-C:\Users\Felipe\Documents\UNIPLAN\Videolocadora\FelipeFragosoC\Videolocadora\Model\obj\Debug\Model.pdb

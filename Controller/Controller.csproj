@@ -68,7 +68,6 @@
   <ItemGroup>
     <Compile Include="ArquivoController.cs" />
     <Compile Include="ClassificacaoIndicativaController.cs" />
-    <Compile Include="DependenteController.cs" />
     <Compile Include="ClienteController.cs" />
     <Compile Include="EnderecoController.cs" />
     <Compile Include="EstoqueController.cs" />

@@ -1,9 +1,11 @@
-﻿using Model;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using SalesWebMvc.Models;
 
 namespace Controller
 {
@@ -31,7 +33,7 @@ namespace Controller
                     cmd.Connection = conn;
                     cmd.CommandText = query;
 
-                    //Cria um adapter que usará a instrução SQL para acessar a tabela de cliente
+                    //Cria um adapter que usará a instrução SQL para acessar a tabela de Filme
                     using (MySqlDataAdapter da = new MySqlDataAdapter())
                     {
                         da.SelectCommand = cmd;
@@ -52,13 +54,13 @@ namespace Controller
                             IdEndereco = x.Field<int>("endereco_id")
                         }).ToList();
 
-                        foreach(Cliente cliente in lstRetorno)
+                        foreach (Cliente cliente in lstRetorno)
                         {
-                            // Recuperando o telefone de cada cliente da lista
+                            // Recuperando o genero cinematografico de cada filme da lista
                             TelefoneController telefoneController = new TelefoneController();
                             cliente.Telefone = telefoneController.BuscarPorId(cliente.IdTelefone);
 
-                            // Recuperando o endereço de cada cliente da lista
+                            // Recuperando a classificacao indicativa de cada filme da lista
                             EnderecoController enderecoController = new EnderecoController();
                             cliente.Endereco = enderecoController.BuscarPorId(cliente.IdEndereco);
                         }
@@ -108,11 +110,11 @@ namespace Controller
                         retorno.IdEndereco = (int)reader["endereco_id"];
                     }
 
-                    // Recuperando o telefone de cada cliente da lista
+                    // Recuperando o genero cinematografico de cada filme da lista
                     TelefoneController telefoneController = new TelefoneController();
                     retorno.Telefone = telefoneController.BuscarPorId(retorno.IdTelefone);
 
-                    // Recuperando o endereço de cada cliente da lista
+                    // Recuperando a classificacao indicativa de cada filme da lista
                     EnderecoController enderecoController = new EnderecoController();
                     retorno.Endereco = enderecoController.BuscarPorId(retorno.IdEndereco);
 
@@ -120,7 +122,7 @@ namespace Controller
                 }
             }
         }
-        
+
         public void Inserir(Cliente registro)
         {
             //Define string de conexão
@@ -137,7 +139,7 @@ namespace Controller
                 {
                     //Monta a consulta no banco de dados
                     string query = $"INSERT INTO cliente(nome, cpf, email, telefone_id, endereco_id) VALUES ('{registro.Nome}', '{registro.Cpf}', '{registro.Email}', {registro.IdTelefone}, {registro.IdEndereco})";
-               
+
                     //Passa informação de conexão e consulta para o comando
                     cmd.Connection = conn;
                     cmd.CommandText = query;
